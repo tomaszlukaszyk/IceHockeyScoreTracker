@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Ice Hockey Score Tracker</string>
+    <string name="home">Home</string>
+    <string name="guest">Guest</string>
+    <string name="goal">Goal!</string>
+    <string name="period_1">Now playing first period</string>
+    <string name="period_2">Now playing second period</string>
+    <string name="period_3">Now playing third period</string>
+    <string name="match_over">Match is over</string>
+    <string name="next_period">Next period</string>
+    <string name="period_1_score">Period 1 score:</string>
+    <string name="period_2_score">Period 2 score:</string>
+    <string name="period_3_score">Period 3 score:</string>
+    <string name="no_score">--:--</string>
+    <string name="reset">Reset</string>
+</resources>
