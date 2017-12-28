@@ -13,6 +13,17 @@ public class MainActivity extends AppCompatActivity {
     int scoreGuest = 0;
     //Tracks the current period
     int currentPeriod = 1;
+    //Used do enable or disable Goal buttons
+    Button goalHome;
+    Button goalGuest;
+    //Used to change text displaying current period
+    TextView currentPeriodTextView;
+    //Used to change text displaying first period score
+    TextView period1ScoreTextView;
+    //Used to change text displaying second period score
+    TextView period2ScoreTextView;
+    //Used to change text displaying third period score
+    TextView period3ScoreTextView;
     //Keys for saving sate of important values when app is destroyed
     private static final String SCORE_HOME = "SavedStateOfScoreHome";
     private static final String SCORE_GUEST = "SavedStateOfScoreGuest";
@@ -26,6 +37,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        goalHome = (Button)findViewById(R.id.goal_home);
+        goalGuest = (Button)findViewById(R.id.goal_guest);
+        currentPeriodTextView = (TextView)findViewById(R.id.current_period);
+        period1ScoreTextView = (TextView)findViewById(R.id.period_1_score);
+        period2ScoreTextView = (TextView)findViewById(R.id.period_2_score);
+        period3ScoreTextView = (TextView)findViewById(R.id.period_3_score);
     }
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
@@ -34,9 +51,7 @@ public class MainActivity extends AppCompatActivity {
         scoreGuest = savedInstanceState.getInt(SCORE_GUEST);
         currentPeriod = savedInstanceState.getInt(CURRENT_PERIOD);
         if (currentPeriod > 3) {
-            Button goalHome = (Button)findViewById(R.id.goal_home);
             goalHome.setEnabled(false);
-            Button goalGuest = (Button)findViewById(R.id.goal_guest);
             goalGuest.setEnabled(false);
         }
         displayForHome(scoreHome);
@@ -51,10 +66,10 @@ public class MainActivity extends AppCompatActivity {
         savedInstanceState.putInt(SCORE_HOME, scoreHome);
         savedInstanceState.putInt(SCORE_GUEST, scoreGuest);
         savedInstanceState.putInt(CURRENT_PERIOD, currentPeriod);
-        savedInstanceState.putString(CURRENT_PERIOD_TEXT, ((TextView)findViewById(R.id.current_period)).getText().toString());
-        savedInstanceState.putString(PERIOD_1_SCORE, ((TextView)findViewById(R.id.period_1_score)).getText().toString());
-        savedInstanceState.putString(PERIOD_2_SCORE, ((TextView)findViewById(R.id.period_2_score)).getText().toString());
-        savedInstanceState.putString(PERIOD_3_SCORE, ((TextView)findViewById(R.id.period_3_score)).getText().toString());
+        savedInstanceState.putString(CURRENT_PERIOD_TEXT, currentPeriodTextView.getText().toString());
+        savedInstanceState.putString(PERIOD_1_SCORE, period1ScoreTextView.getText().toString());
+        savedInstanceState.putString(PERIOD_2_SCORE, period2ScoreTextView.getText().toString());
+        savedInstanceState.putString(PERIOD_3_SCORE, period3ScoreTextView.getText().toString());
         super.onSaveInstanceState(savedInstanceState);
     }
     /**
@@ -73,23 +88,19 @@ public class MainActivity extends AppCompatActivity {
     }
     //Displays current period
     public void displayCurrentPeriod(String message) {
-        TextView periodTextView = (TextView) findViewById(R.id.current_period);
-        periodTextView.setText(message);
+        currentPeriodTextView.setText(message);
     }
     //Displays score for period 1
     public void displayScorePeriod1(String message) {
-        TextView period1TextView = (TextView) findViewById(R.id.period_1_score);
-        period1TextView.setText(message);
+        period1ScoreTextView.setText(message);
     }
     //Displays score for period 2
     public void displayScorePeriod2(String message) {
-        TextView period1TextView = (TextView) findViewById(R.id.period_2_score);
-        period1TextView.setText(message);
+        period2ScoreTextView.setText(message);
     }
     //Displays score for period 3
     public void displayScorePeriod3(String message) {
-        TextView period1TextView = (TextView) findViewById(R.id.period_3_score);
-        period1TextView.setText(message);
+        period3ScoreTextView.setText(message);
     }
 
     //Ads 1 goal to Home team
@@ -131,18 +142,14 @@ public class MainActivity extends AppCompatActivity {
                 scoreGuest = 0;
                 displayForHome(scoreHome);
                 displayForGuest(scoreGuest);
-                Button goalHome = (Button)findViewById(R.id.goal_home);
                 goalHome.setEnabled(false);
-                Button goalGuest = (Button)findViewById(R.id.goal_guest);
                 goalGuest.setEnabled(false);
                 break;
         }
     }
     //Resets the game
     public void resetScore(View v) {
-        Button goalHome = (Button)findViewById(R.id.goal_home);
         goalHome.setEnabled(true);
-        Button goalGuest = (Button)findViewById(R.id.goal_guest);
         goalGuest.setEnabled(true);
         scoreHome = 0;
         scoreGuest = 0;
