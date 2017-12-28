@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="scoreLayoutPadding">24dp</dimen>
+    <dimen name="teamPadding">16dp</dimen>
+    <dimen name="scorePadding">24dp</dimen>
+    <dimen name="goalButtonPadding">8dp</dimen>
+    <dimen name="topMargin">16dp</dimen>
+    <dimen name="periodScoreMargin">16dp</dimen>
+    <dimen name="periodScoreMarginLand">24dp</dimen>
+    <dimen name="marginBottom">32dp</dimen>
+    <dimen name="periodScoreLayoutPaddingLand">24dp</dimen>
+    <dimen name="bottomLayoutPaddingLand">16dp</dimen>
+    <dimen name="bottomObjectsMarginLand">24dp</dimen>
+    <dimen name="textNormal">14sp</dimen>
+    <dimen name="textLarge">56sp</dimen>
+</resources>

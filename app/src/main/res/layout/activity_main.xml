@@ -16,18 +16,18 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:paddingLeft="24dp"
-            android:paddingRight="24dp">
+            android:paddingLeft="@dimen/scoreLayoutPadding"
+            android:paddingRight="@dimen/scoreLayoutPadding">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center_horizontal"
-                android:padding="16dp"
+                android:padding="@dimen/teamPadding"
                 android:text="@string/home"
                 android:textColor="@color/textLight"
-                android:textSize="14sp" />
+                android:textSize="@dimen/textNormal" />
 
             <TextView
                 android:id="@+id/home_score"
@@ -35,15 +35,15 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-light"
                 android:gravity="center_horizontal"
-                android:paddingBottom="24dp"
+                android:paddingBottom="@dimen/scorePadding"
                 android:text="0"
                 android:textColor="@color/textDark"
-                android:textSize="56sp" />
+                android:textSize="@dimen/textLarge" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_margin="@dimen/goalButtonPadding"
                 android:onClick="goalHome"
                 android:id="@+id/goal_home"
                 android:text="@string/goal" />
@@ -54,7 +54,7 @@
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/topMargin"
             android:background="@android:color/darker_gray" />
 
         <LinearLayout
@@ -62,18 +62,18 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:paddingLeft="24dp"
-            android:paddingRight="24dp">
+            android:paddingLeft="@dimen/scoreLayoutPadding"
+            android:paddingRight="@dimen/scoreLayoutPadding">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center_horizontal"
-                android:padding="16dp"
+                android:padding="@dimen/teamPadding"
                 android:text="@string/guest"
                 android:textColor="@color/textLight"
-                android:textSize="14sp" />
+                android:textSize="@dimen/textNormal" />
 
             <TextView
                 android:id="@+id/guest_score"
@@ -81,15 +81,15 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-light"
                 android:gravity="center_horizontal"
-                android:paddingBottom="24dp"
+                android:paddingBottom="@dimen/scorePadding"
                 android:text="0"
                 android:textColor="@color/textDark"
-                android:textSize="56sp" />
+                android:textSize="@dimen/textLarge" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_margin="@dimen/goalButtonPadding"
                 android:onClick="goalGuest"
                 android:id="@+id/goal_guest"
                 android:text="@string/goal" />
@@ -104,12 +104,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/liveScore"
-        android:layout_margin="16dp"
+        android:layout_margin="@dimen/topMargin"
         android:fontFamily="sans-serif-medium"
         android:gravity="center_horizontal"
         android:text="@string/period_1"
         android:textColor="@color/textLight"
-        android:textSize="14sp" />
+        android:textSize="@dimen/textNormal" />
 
     <Button
         android:id="@+id/next_period"
@@ -124,14 +124,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/next_period"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/topMargin"
         android:gravity="center_horizontal"
         android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="16dp"
+            android:layout_marginRight="@dimen/periodScoreMargin"
             android:orientation="vertical">
 
             <TextView
@@ -140,7 +140,7 @@
                 android:fontFamily="sans-serif-medium"
                 android:text="@string/period_1_score"
                 android:textColor="@color/textLight"
-                android:textSize="14sp" />
+                android:textSize="@dimen/textNormal" />
 
             <TextView
                 android:id="@+id/period_1_score"
@@ -150,7 +150,7 @@
                 android:gravity="center_horizontal"
                 android:text="@string/no_score"
                 android:textColor="@color/textLight"
-                android:textSize="14sp" />
+                android:textSize="@dimen/textNormal" />
         </LinearLayout>
 
         <LinearLayout
@@ -164,7 +164,7 @@
                 android:fontFamily="sans-serif-medium"
                 android:text="@string/period_2_score"
                 android:textColor="@color/textLight"
-                android:textSize="14sp" />
+                android:textSize="@dimen/textNormal" />
 
             <TextView
                 android:id="@+id/period_2_score"
@@ -174,13 +174,13 @@
                 android:gravity="center_horizontal"
                 android:text="@string/no_score"
                 android:textColor="@color/textLight"
-                android:textSize="14sp" />
+                android:textSize="@dimen/textNormal" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
+            android:layout_marginLeft="@dimen/periodScoreMargin"
             android:orientation="vertical">
 
             <TextView
@@ -189,7 +189,7 @@
                 android:fontFamily="sans-serif-medium"
                 android:text="@string/period_3_score"
                 android:textColor="@color/textLight"
-                android:textSize="14sp" />
+                android:textSize="@dimen/textNormal" />
 
             <TextView
                 android:id="@+id/period_3_score"
@@ -199,7 +199,7 @@
                 android:gravity="center_horizontal"
                 android:text="@string/no_score"
                 android:textColor="@color/textLight"
-                android:textSize="14sp" />
+                android:textSize="@dimen/textNormal" />
         </LinearLayout>
     </LinearLayout>
 
@@ -208,7 +208,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="@dimen/marginBottom"
         android:onClick="resetScore"
         android:text="@string/reset" />
 
