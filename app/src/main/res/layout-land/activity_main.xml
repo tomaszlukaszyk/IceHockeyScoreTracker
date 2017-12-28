@@ -1,205 +1,211 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context="com.example.adnroid.icehockeyscoretracker.MainActivity">
 
-    <LinearLayout
-        android:id="@+id/liveScore"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:id="@+id/liveScore"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:paddingLeft="@dimen/scoreLayoutPadding"
-            android:paddingRight="@dimen/scoreLayoutPadding">
+            android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center_horizontal"
-                android:padding="@dimen/teamPadding"
-                android:text="@string/home"
-                android:textColor="@color/textLight"
-                android:textSize="@dimen/textNormal" />
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/scoreLayoutPadding"
+                android:paddingRight="@dimen/scoreLayoutPadding">
 
-            <TextView
-                android:id="@+id/home_score"
-                android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/teamPadding"
+                    android:text="@string/home"
+                    android:textColor="@color/textLight"
+                    android:textSize="@dimen/textNormal" />
+
+                <TextView
+                    android:id="@+id/home_score"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center_horizontal"
+                    android:paddingBottom="@dimen/scorePadding"
+                    android:text="0"
+                    android:textColor="@color/textDark"
+                    android:textSize="@dimen/textLarge" />
+
+                <Button
+                    android:id="@+id/goal_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/goalButtonPadding"
+                    android:onClick="goalHome"
+                    android:text="@string/goal" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/topMargin"
+                android:background="@android:color/darker_gray" />
+
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-light"
-                android:gravity="center_horizontal"
-                android:paddingBottom="@dimen/scorePadding"
-                android:text="0"
-                android:textColor="@color/textDark"
-                android:textSize="@dimen/textLarge" />
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/scoreLayoutPadding"
+                android:paddingRight="@dimen/scoreLayoutPadding">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/teamPadding"
+                    android:text="@string/guest"
+                    android:textColor="@color/textLight"
+                    android:textSize="@dimen/textNormal" />
+
+                <TextView
+                    android:id="@+id/guest_score"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center_horizontal"
+                    android:paddingBottom="@dimen/scorePadding"
+                    android:text="0"
+                    android:textColor="@color/textDark"
+                    android:textSize="@dimen/textLarge" />
+
+                <Button
+                    android:id="@+id/goal_guest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/goalButtonPadding"
+                    android:onClick="goalGuest"
+                    android:text="@string/goal" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/topMargin"
+                android:background="@android:color/darker_gray" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/periodScoreLayoutPaddingLand">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/period_1_score"
+                    android:textColor="@color/textLight"
+                    android:textSize="@dimen/textNormal" />
+
+                <TextView
+                    android:id="@+id/period_1_score"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/periodScoreMarginLand"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center_horizontal"
+                    android:text="@string/no_score"
+                    android:textColor="@color/textLight"
+                    android:textSize="@dimen/textNormal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/period_2_score"
+                    android:textColor="@color/textLight"
+                    android:textSize="@dimen/textNormal" />
+
+                <TextView
+                    android:id="@+id/period_2_score"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/periodScoreMarginLand"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center_horizontal"
+                    android:text="@string/no_score"
+                    android:textColor="@color/textLight"
+                    android:textSize="@dimen/textNormal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/period_3_score"
+                    android:textColor="@color/textLight"
+                    android:textSize="@dimen/textNormal" />
+
+                <TextView
+                    android:id="@+id/period_3_score"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center_horizontal"
+                    android:text="@string/no_score"
+                    android:textColor="@color/textLight"
+                    android:textSize="@dimen/textNormal" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:padding="@dimen/bottomLayoutPaddingLand">
 
             <Button
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/goalButtonPadding"
-                android:onClick="goalHome"
-                android:id="@+id/goal_home"
-                android:text="@string/goal" />
-
-        </LinearLayout>
-
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="@dimen/topMargin"
-            android:background="@android:color/darker_gray" />
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:paddingLeft="@dimen/scoreLayoutPadding"
-            android:paddingRight="@dimen/scoreLayoutPadding">
+                android:layout_marginRight="@dimen/bottomObjectsMarginLand"
+                android:onClick="resetScore"
+                android:text="@string/reset" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:id="@+id/current_period"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/bottomObjectsMarginLand"
                 android:fontFamily="sans-serif-medium"
-                android:gravity="center_horizontal"
-                android:padding="@dimen/teamPadding"
-                android:text="@string/guest"
+                android:text="@string/period_1"
                 android:textColor="@color/textLight"
                 android:textSize="@dimen/textNormal" />
-
-            <TextView
-                android:id="@+id/guest_score"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-light"
-                android:gravity="center_horizontal"
-                android:paddingBottom="@dimen/scorePadding"
-                android:text="0"
-                android:textColor="@color/textDark"
-                android:textSize="@dimen/textLarge" />
 
             <Button
-                android:layout_width="match_parent"
+                android:id="@+id/next_period"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/goalButtonPadding"
-                android:onClick="goalGuest"
-                android:id="@+id/goal_guest"
-                android:text="@string/goal" />
-
+                android:onClick="nextPeriod"
+                android:text="@string/next_period" />
 
         </LinearLayout>
 
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="@dimen/topMargin"
-            android:background="@android:color/darker_gray" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="@dimen/periodScoreLayoutPaddingLand">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-medium"
-                android:text="@string/period_1_score"
-                android:textColor="@color/textLight"
-                android:textSize="@dimen/textNormal" />
-
-            <TextView
-                android:id="@+id/period_1_score"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/periodScoreMarginLand"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center_horizontal"
-                android:text="@string/no_score"
-                android:textColor="@color/textLight"
-                android:textSize="@dimen/textNormal" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-medium"
-                android:text="@string/period_2_score"
-                android:textColor="@color/textLight"
-                android:textSize="@dimen/textNormal" />
-
-            <TextView
-                android:id="@+id/period_2_score"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/periodScoreMarginLand"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center_horizontal"
-                android:text="@string/no_score"
-                android:textColor="@color/textLight"
-                android:textSize="@dimen/textNormal" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-medium"
-                android:text="@string/period_3_score"
-                android:textColor="@color/textLight"
-                android:textSize="@dimen/textNormal" />
-
-            <TextView
-                android:id="@+id/period_3_score"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center_horizontal"
-                android:text="@string/no_score"
-                android:textColor="@color/textLight"
-                android:textSize="@dimen/textNormal" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:gravity="right"
-        android:orientation="horizontal"
-        android:padding="@dimen/bottomLayoutPaddingLand">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/bottomObjectsMarginLand"
-            android:onClick="resetScore"
-            android:text="@string/reset" />
-
-        <TextView
-            android:id="@+id/current_period"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/bottomObjectsMarginLand"
-            android:fontFamily="sans-serif-medium"
-            android:text="@string/period_1"
-            android:textColor="@color/textLight"
-            android:textSize="@dimen/textNormal" />
-
-        <Button
-            android:id="@+id/next_period"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="nextPeriod"
-            android:text="@string/next_period" />
-
-    </LinearLayout>
-
-</RelativeLayout>
+    </RelativeLayout>
+</ScrollView>
